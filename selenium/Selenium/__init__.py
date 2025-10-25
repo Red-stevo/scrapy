@@ -4,24 +4,25 @@ from selenium.webdriver.chrome.options import  Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# Driver options.
-options = Options()
-options.add_argument("--headless=new")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
+def first_lesson():
+    # Driver options.
+    options = Options()
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
-# Create an instance on the service.
-service =  Service(ChromeDriverManager().install())
+    # Create an instance on the service.
+    service =  Service(ChromeDriverManager().install())
 
 
-# Create the browser instance.
-browser = webdriver.Chrome(service=service, options=options)
+    # Create the browser instance.
+    browser = webdriver.Chrome(service=service, options=options)
 
-# Open a page.
+    # Open a page.
 
-browser.get("https://google.com")
+    browser.get("https://google.com")
 
-print(browser.title)
-print(browser.current_url)
+    print(browser.title)
+    print(browser.current_url)
 
-time.sleep(10)
+    time.sleep(10)
